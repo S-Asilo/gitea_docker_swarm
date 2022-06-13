@@ -1,6 +1,10 @@
+# gitea_docker_swarm
+
 Gitea is a community managed lightweight code hosting solution written in Go.
 It is published under the [MIT license](https://choosealicense.com/licenses/mit/).
 [Gitea](https://gitea.io/en-us/) setup for running in a [docker swarm](https://docs.docker.com/engine/swarm/).
+
+[Για Ελληνικά δείτε το README](README.md)
 
 ## Configuration
 
