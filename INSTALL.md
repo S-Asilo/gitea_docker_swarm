@@ -1,12 +1,17 @@
 # Εγκατάσταση 
 
 Για την εγκατάσταση και την χρήση του gitea χρειάζονται τα ακόλουθα βήματα:
-	1. Εκτέλεση της εντολής make start (από manager node του docker swarm)
-	2. Άνοιγμα ενός browser στο http://<MANAGER_IP>:3000 όπου <MANAGER_IP> είναι δημόσιο το IP του manager node.
-	3. Στο πεδίο host της mysql, θα πρέπει να μπεί το IP του worker που κάνει host το gitea_db.
-	4. Επιλογή Συνέχεια.
-	5. (Προαιρετικό) Για τη ρύθμιση του ssh passthrough (δυνατότητα χρήσης ssh για την διαχείρηση των git repository),
-    εκτέλεση της εντολής make setup_ssh
+
+1. Εκτέλεση της εντολής make start (από manager node του docker swarm)
+
+2. Άνοιγμα ενός browser στο http://<MANAGER_IP>:3000 όπου <MANAGER_IP> είναι δημόσιο το IP του manager node.
+
+3. Στο πεδίο host της mysql, θα πρέπει να μπεί το IP του worker που κάνει host το gitea_db.
+
+4. Επιλογή Συνέχεια.
+
+5. (Προαιρετικό) Για τη ρύθμιση του ssh passthrough (δυνατότητα χρήσης ssh για την διαχείρηση των git repository),
+εκτέλεση της εντολής make setup_ssh.
 	
 # Πιθανά προβλήματα
 
