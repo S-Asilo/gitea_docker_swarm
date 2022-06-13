@@ -16,10 +16,10 @@ services:
     image: gitea/gitea:1.16.6
     container_name: gitea
     environment:
-      - USER_UID=1000
-      - USER_GID=1000
+      - USER_UID=2022
+      - USER_GID=2022
       - GITEA__database__DB_TYPE=mysql
-      - GITEA__database__HOST=10.1.2.70:3306 # vpn client ip here
+      - GITEA__database__HOST=db:3306 # vpn client ip here
       - GITEA__database__NAME=gitea
       - GITEA__database__USER=gitea
       - GITEA__database__PASSWD=gitea
