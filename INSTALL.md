@@ -12,6 +12,13 @@
 
 5. (Προαιρετικό) Για τη ρύθμιση του ssh passthrough (δυνατότητα χρήσης ssh για την διαχείρηση των git repository),
 εκτέλεση της εντολής make setup_ssh.
+
+```
+git clone https://gitea.cultab.xyz/cultab/gitea_docker_swarm
+cd gitea_docker_swarm
+make start
+# open browser to http://<MANAGER_IP>:3000
+```
 	
 # Πιθανά προβλήματα
 
