@@ -1,4 +1,4 @@
-# gitea_docker_swarm ΕΛ
+For english see [the english README](README_en.md)
 
 Το gitea είναι μια ελαφριά υπηρεσία φιλοξενίας κώδικα γραμμένη σε Go που αναπτύσσεται και διαχειρίζεται από την κοινότητα.
 Εκδίδεται κάτω από τους όρους του [MIT license](https://choosealicense.com/licenses/mit/).
@@ -29,6 +29,8 @@ base url, ssh url
 
 Για τη ρύθμιση του ssh container passthrough εκτελέστε `make setup_ssh`.
 
+Θα ζητηθούν δικαιώματα διαχειριστή ώστε να δημιουργηθεί ο χρήστης `git`.
+
 ## Αλλαγή default κωδικών, username και database host
 
 ```
@@ -38,31 +40,3 @@ edit .env
 
 Στην γραμμή `GITEA__database__HOST` προσθέτουμε το
 IP του δεύτερου node στο vpn.
-
-# gitea_docker_swarm EN
-
-Gitea is a community managed lightweight code hosting solution written in Go.
-It is published under the [MIT license](https://choosealicense.com/licenses/mit/).
-[Gitea](https://gitea.io/en-us/) setup for running in a [docker swarm](https://docs.docker.com/engine/swarm/).
-
-## Configuration
-
-Gitea's config resides in
-`./gitea/gitea/conf/app.ini`.
-In here someone defines important values such as
-base url, ssh url.
-The file is created after the first run.
-More information on the options offered by the config file 
-can be found in [gitea's documentation](https://docs.gitea.io/en-us/config-cheat-sheet/).
-
-## Start Service
-
-The service starts by running the command `make start`.
-
-## Stop Service
-
-The service stops by running the command `make stop`.
-
-## Setting up ssh container passthrough
-
-For setting up ssh container passthrough run `make setup_ssh`.
