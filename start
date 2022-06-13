@@ -1,1 +1,4 @@
+docker service rm gitea_db
+docker service rm gitea_server
+
 docker stack deploy gitea --compose-file docker-compose.yml
