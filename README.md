@@ -36,9 +36,7 @@ base url, ssh url
 ## Αλλαγή default κωδικών, username και database host
 
 ```
+# copy default env file
 cp DOTenv .env
-edit .env
+$EDITOR .env
 ```
-
-Στην γραμμή `GITEA__database__HOST` προσθέτουμε το
-IP του δεύτερου node στο vpn.
