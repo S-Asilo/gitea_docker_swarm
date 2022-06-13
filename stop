@@ -1,3 +1,0 @@
-docker service rm gitea_db
-docker service rm gitea_server
-
