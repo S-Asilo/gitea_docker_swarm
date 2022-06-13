@@ -21,19 +21,23 @@ help:
 	@echo "$$HELP_MSG"
 
 start: stop
+	@mkdir -p ./gitea
 	@echo "Starting serice.."
 	@docker stack deploy gitea --compose-file docker-compose.yml
 	@echo "done"
 
 stop:
 	@echo "Stoppping service.."
-	@docker service rm gitea_db
-	@docker service rm gitea_server
+	-@docker service rm gitea_db
+	-@docker service rm gitea_server
 	@echo "done"
 
 ps:
 	@docker service ps gitea_server
 	@docker service ps gitea_db
+
+ls:
+	@docker service ls
 
 logs_db:
 	@docker service logs gitea_db
