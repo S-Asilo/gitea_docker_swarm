@@ -1,0 +1,2 @@
+docker service ls
+

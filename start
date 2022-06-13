@@ -1,0 +1,1 @@
+docker stack deploy gitea --compose-file docker-compose.yml
