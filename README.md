@@ -1,10 +1,10 @@
 # gitea_docker_swarm
 
-Το gitea είναι μια ελαφριά υπηρεσία φιλοξενίας κώδικα γραμμένη σε Go που αναπτύσσεται και διαχειρίζεται από την κοινότητα.
+Το [gitea](https://gitea.io/en-us/) είναι μια ελαφριά υπηρεσία φιλοξενίας κώδικα γραμμένη σε Go που αναπτύσσεται και διαχειρίζεται από την κοινότητα.
 Εκδίδεται κάτω από τους όρους του [MIT license](https://choosealicense.com/licenses/mit/).
 
 Το gitea_docker_swarm παρέχει τα απαραίτητα αρχεία και οδηγίες
-ώστε να τρέξει κάποιος τον git server [gitea](https://gitea.io/en-us/) σε [docker swarm](https://docs.docker.com/engine/swarm/)
+ώστε να τρέξει κάποιος τον git server gitea σε [docker swarm](https://docs.docker.com/engine/swarm/)
 (με την προϋπόθεση ότι υπάρχει ήδη ένα δίκτυο swarm).
 
 [For english see the english README.](README_en.md)
