@@ -7,7 +7,8 @@
 ώστε να τρέξει κάποιος τον git server [gitea](https://gitea.io/en-us/) σε [docker swarm](https://docs.docker.com/engine/swarm/)
 (με την προϋπόθεση ότι υπάρχει ήδη ένα δίκτυο swarm).
 
-[For english see the english README](README_en.md)
+[For english see the english README.](README_en.md)
+
 
 ## Ρύθμιση υπηρεσίας
 
@@ -18,6 +19,8 @@ base url, ssh url
 και άλλες σημαντικές ρυθμίσεις.
 Το αρχείο δημιουργείτε μετά την πρώτη εκκίνηση.
 Οδηγίες για τις επιλογές υπάρχουν στο [documentation του gitea](https://docs.gitea.io/en-us/config-cheat-sheet/).
+
+Οδηγίες εγκατάστασης θα βρείτε στο αρχέιο [INSTALL.md](INSTALL.md).
 
 ## Εκκίνηση Υπηρεσίας
 
