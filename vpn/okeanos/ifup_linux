@@ -1,0 +1,11 @@
+
+ip link set swarmlab0 down
+ip link del swarmlab0
+ip link add swarmlab0 type wireguard
+wg set swarmlab0 listen-port 51820 private-key /settings/connect/privatekey
+ip addr add 10.1.2.66/26 dev swarmlab0
+ip link set mtu 1420 up dev swarmlab0
+ip link set up dev swarmlab0
+iptables -A FORWARD -i swarmlab0 -j ACCEPT;
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+	    

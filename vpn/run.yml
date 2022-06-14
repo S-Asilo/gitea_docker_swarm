@@ -1,0 +1,53 @@
+
+version: "3.8"
+
+services:
+  masterPb18f9lzswfbze7G41E96ZKbV1dA9Uq1:
+    image: hub.swarmlab.io:5480/venus:latest
+    user: root
+    entrypoint: ["mpi_bootstrap", "role=master", "mpi_master_service_name=master", "mpi_worker_service_name=worker"]
+    environment:
+     - NODENAME={{.Node.Hostname}}
+     - NODEID={{.Node.ID}}
+     - SERVICEID={{.Service.ID}}
+     - SERVICENAME={{.Service.Name}}
+     - TASKID={{.Task.ID}}
+     - TASKNAME={{.Task.Name}}
+     - TASKREPID={{.Task.Slot}}
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        #max_replicas_per_node: 1
+        constraints:
+          - node.labels.apinet == wgnet
+      resources:
+        limits:
+          cpus: '0.12'
+          memory: 80M
+        reservations:
+          cpus: '0.10'
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+      update_config:
+        parallelism: 2
+        delay: 10s
+        order: stop-first
+    networks:
+      n-DD8YWuDZmYed7ZSuIF3p5ZPItJ8jNLpe:
+
+    ports:
+      - 38521:51820/udp
+
+    volumes:
+    - /okeanos:/settings/connect
+
+networks:
+  n-DD8YWuDZmYed7ZSuIF3p5ZPItJ8jNLpe:

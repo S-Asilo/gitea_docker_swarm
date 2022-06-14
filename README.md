@@ -38,7 +38,7 @@ base url, ssh url
 
 ## Αλλαγή default κωδικών, username και database host
 
-```
+```bash
 # copy default env file
 cp DOTenv .env
 $EDITOR .env

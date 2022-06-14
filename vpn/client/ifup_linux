@@ -1,0 +1,53 @@
+# Your private key
+PrivateKey=AD3Ae0SuiUF59h8wfTTgFwFgjCBbsCSWkdwE4tCP8EQ=
+
+ListenPort=51820
+
+# Public key from server
+PublicKey=jgLgpv9GgosKNQh7lbnymGkJXmIOqg4QrXdEH2Ei/XE=
+
+# server info
+# Endpoint=[IPserver]:[port]
+Endpoint=83.212.78.18:51820
+
+# all
+#AllowedIPs="0.0.0.0/0, ::/0"
+# only subnet
+AllowedIPs="10.1.2.64/26"
+
+WG_PersistentKeepalive=25
+
+# name to peer
+NETWORK_INT=wg2
+# info for peer server
+NETWORK_IP=10.1.2.68
+NETWORK_NETWORK=${NETWORK_IP}/26
+
+cat << FOE > /etc/swlab/wg0.conf
+# your server
+[Interface]
+  PrivateKey = $PrivateKey
+  ListenPort = $ListenPort
+
+# peer to connect to
+[Peer]
+  PublicKey = $PublicKey
+  Endpoint = $Endpoint
+  AllowedIPs = $AllowedIPs
+  PersistentKeepalive = $WG_PersistentKeepalive
+
+FOE
+
+ip link set $NETWORK_INT down
+ip link del $NETWORK_INT
+ip link add $NETWORK_INT type wireguard
+sleep 1
+wg setconf $NETWORK_INT /etc/swlab/wg0.conf
+sleep 1
+ip addr add $NETWORK_NETWORK dev $NETWORK_INT
+sysctl -w net.ipv4.conf.all.rp_filter=2
+ip link set mtu 1420 up dev $NETWORK_INT
+ip link set up dev $NETWORK_INT
+ip route add default via $NETWORK_IP metric 2 table 200
+ip route show table 200 | grep -w $NETWORK_IP
+ip rule add table main suppress_prefixlength 0

@@ -1,0 +1,2 @@
+#wg set swarmlab0 peer x20kv+v3LCattGdNheBhL9MIOXCxNxaMouroQLhfOCU= allowed-ips 10.1.2.68
+wg set swarmlab0 peer M1dcCRZM650kwwGvamT4T/7lKWCJgNnrk73gSZ4FiBI= allowed-ips 10.1.2.68
