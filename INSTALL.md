@@ -63,7 +63,7 @@ wg set swarmlab0 peer <public-key> allowed-ips <ip>
 4. Στην μεταβλητή NETWORK_IP προσθέτουμε το IP που θα έχει ο node στο vpn
 (δείτε την παράγραφο: [Προσθήκη χρηστών/node](#add-user).
 
-## Τροποποίηση αρχείου ./run-client.sh
+### Τροποποίηση αρχείου ./run-client.sh
 
 Στην μεταβλητή NETWORK_IP προσθέτουμε το IP που θα έχει ο node στο vpn
 όπως στο προηγόυμενο αρχείο.

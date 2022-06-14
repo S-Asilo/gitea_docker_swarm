@@ -1,4 +1,9 @@
+
 # gitea_docker_swarm
+
+[For english see the english README.](README_en.md)
+
+[Οδηγίες εγκατάστασης θα βρείτε στο αρχέιο INSTALL.md](INSTALL.md).
 
 Το [gitea](https://gitea.io/en-us/) είναι μια ελαφριά υπηρεσία φιλοξενίας κώδικα γραμμένη σε Go που αναπτύσσεται και διαχειρίζεται από την κοινότητα.
 Εκδίδεται κάτω από τους όρους του [MIT license](https://choosealicense.com/licenses/mit/).
@@ -7,20 +12,15 @@
 ώστε να τρέξει κάποιος τον git server gitea σε [docker swarm](https://docs.docker.com/engine/swarm/)
 (με την προϋπόθεση ότι υπάρχει ήδη ένα δίκτυο swarm).
 
-[For english see the english README.](README_en.md)
-
-
 ## Ρύθμιση υπηρεσίας
 
 Οι ρυθμίσεις του gitea βρίσκονται στο αρχείο
-`./gitea/gitea/conf/app.ini`. 
+`./gitea/gitea/conf/app.ini`.
 Εδώ κάποιος θα δηλώσει το
 base url, ssh url
 και άλλες σημαντικές ρυθμίσεις.
 Το αρχείο δημιουργείτε μετά την πρώτη εκκίνηση.
 Οδηγίες για τις επιλογές υπάρχουν στο [documentation του gitea](https://docs.gitea.io/en-us/config-cheat-sheet/).
-
-Οδηγίες εγκατάστασης θα βρείτε στο αρχέιο [INSTALL.md](INSTALL.md).
 
 ## Εκκίνηση Υπηρεσίας
 

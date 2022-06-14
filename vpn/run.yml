@@ -1,4 +1,3 @@
-
 version: "3.8"
 
 services:
@@ -40,14 +39,7 @@ services:
         parallelism: 2
         delay: 10s
         order: stop-first
-    networks:
-      n-DD8YWuDZmYed7ZSuIF3p5ZPItJ8jNLpe:
-
-    ports:
-      - 38521:51820/udp
+    network-mode: host
 
     volumes:
     - /okeanos:/settings/connect
-
-networks:
-  n-DD8YWuDZmYed7ZSuIF3p5ZPItJ8jNLpe:
